@@ -3,7 +3,7 @@ import {
   RouteRecordRaw,
   createWebHashHistory,
 } from 'vue-router';
-import Home from '@/views/home.vue';
+import Home from '/@/views/home.vue';
 
 const routes: RouteRecordRaw[] = [{
   path: '/',
