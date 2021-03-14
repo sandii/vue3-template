@@ -3,7 +3,6 @@ import {
   RouteRecordRaw,
   createWebHashHistory,
 } from 'vue-router';
-import Home from '/@/views/home.vue';
 
 const routes: RouteRecordRaw[] = [{
   path: '/',
@@ -11,7 +10,7 @@ const routes: RouteRecordRaw[] = [{
 }, {
   path: '/home',
   name: 'home',
-  component: Home,
+  component: () => import('/@/views/home.vue'),
 }];
 const router = createRouter({
   history: createWebHashHistory(),
