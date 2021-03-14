@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import { ElMessage } from 'element-plus';
+import { ElMessage } from 'element-plus';
 import { Param, Res } from '/@/types';
 
 export const formatUrl = (
@@ -23,7 +23,7 @@ instance.interceptors.response.use(
       message,
     } = data as Res;
     if (code !== 200) {
-      // Message.warning(message || '');
+      ElMessage.warning(message || '');
     }
     return data;
   },
