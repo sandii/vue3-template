@@ -18,5 +18,12 @@ export default defineConfig({
       replacement: resolve(__dirname, 'src') + '/',
     }],
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "src/styles/theme.scss";',
+      },
+    },
+  },
   plugins: [vue()],
 });
