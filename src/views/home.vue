@@ -19,6 +19,7 @@ export default class Home extends Vue {
   private user = setup(() => homeUser());
   public created (): void {
     this.user.request();
+    this.$message.success('asdf');
   }
 };
 </script>
