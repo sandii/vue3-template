@@ -12,10 +12,12 @@ import {
   Options,
   setup,
 } from 'vue-class-component';
+// import { mapState } from 'vuex';
 import homeInfo from '/@/composables/home/home-info';
 
 @Options({})
 export default class Home extends Vue {
+  // ...mapState('user', ['id'])
   private info = setup(() => homeInfo());
   public created (): void {
     this.info.request();
