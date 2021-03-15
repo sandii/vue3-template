@@ -1,8 +1,8 @@
 <template>
 <div class="home">
-  <p>{{user.state.name}}</p>
-  <p>{{user.state.count}}</p>
-  <button @click="user.increment">increment</button>
+  <p>{{info.state.name}}</p>
+  <p>{{info.state.count}}</p>
+  <button @click="info.increment">increment</button>
 </div>
 </template>
 
@@ -12,13 +12,13 @@ import {
   Options,
   setup,
 } from 'vue-class-component';
-import homeUser from '/@/composables/home/home-user';
+import homeInfo from '/@/composables/home/home-info';
 
 @Options({})
 export default class Home extends Vue {
-  private user = setup(() => homeUser());
+  private info = setup(() => homeInfo());
   public created (): void {
-    this.user.request();
+    this.info.request();
     this.$message.success('asdf');
   }
 };
