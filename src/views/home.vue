@@ -12,16 +12,18 @@ import {
   Options,
   setup,
 } from 'vue-class-component';
-// import { mapState } from 'vuex';
+import { namespace } from 'vuex-class';
 import homeInfo from '/@/composables/home/home-info';
+
+const userVuex = namespace('user');
 
 @Options({})
 export default class Home extends Vue {
-  // ...mapState('user', ['id'])
   private info = setup(() => homeInfo());
+  @userVuex.State('username') username!: string;
   public created (): void {
     this.info.request();
-    this.$message.success('asdf');
+    this.$message.success(this.username);
   }
 };
 </script>

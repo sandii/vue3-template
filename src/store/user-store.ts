@@ -12,8 +12,8 @@ interface State {
 }
 const state: State = {
   id: 0,
-  username: '',
-  nickname: '',
+  username: 'hello',
+  nickname: 'world',
 };
 const getters: GetterTree<State, any> = {
   name (state: State): string {
