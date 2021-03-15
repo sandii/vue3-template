@@ -1,4 +1,5 @@
 import { reactive } from 'vue';
+import { useStore } from 'vuex';
 
 interface State {
   name: string;
@@ -10,17 +11,22 @@ export default () => {
     name: '',
     count: 0,
   });
-  const request = async () => {
+  const request = async (): Promise<void> => {
     // todo ajax
     state.name = 'hello';
     state.count = 1;
   };
-  const increment = () => {
+  const increment = (): void => {
     state.count++;
+  };
+  const doVuex = (): void => {
+    const store = useStore();
+    console.log(store.state.user.id);
   };
   return {
     state,
     request,
     increment,
+    doVuex,
   };
 };
