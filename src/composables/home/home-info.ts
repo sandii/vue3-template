@@ -5,8 +5,13 @@ interface State {
   name: string;
   count: number;
 }
-
-export default () => {
+export interface HomeInfoReturn {
+  state: State;
+  request: () => Promise<any>;
+  increment: () => any;
+  doVuex: () => any;
+}
+export default (): HomeInfoReturn => {
   const state: State = reactive({
     name: '',
     count: 0,
