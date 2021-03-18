@@ -28,7 +28,9 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    eslintPlugin(),
+    eslintPlugin({
+      include: ['src/**'],
+    }),
     styleImport({
       libs: [{
         libraryName: 'element-plus',
